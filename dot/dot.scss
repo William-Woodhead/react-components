@@ -1,0 +1,32 @@
+$dot-size: 8px !default;
+
+.Dot {
+  display: none;
+  position: relative;
+  width: $default-unit-height;
+  height: $default-unit-height;
+  cursor: pointer;
+
+  &.Dot--show {
+    display: inline-block;
+  }
+}
+
+.Dot-circle {
+  display: inline-block;
+  position: absolute;
+  top: $default-unit-height / 2 - $dot-size / 2;
+  left: $default-unit-height / 2 - $dot-size / 2;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: 50%;
+  background: $color-light-red;
+
+  .Dot--warning & {
+    background: $color-orange;
+  }
+
+  .Dot--ok & {
+    background: $color-light-blue;
+  }
+}

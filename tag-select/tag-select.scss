@@ -1,0 +1,55 @@
+$tags-height: 29px !default;
+
+.TagSelect {
+  position: relative;
+  width: 100%;
+}
+
+.TagSelect-tags {
+  min-height: $tags-height;
+  margin-bottom: $gutter;
+}
+
+.TagSelect-inputWrapper {
+  @include border;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: $default-unit-height;
+  background: $color-white;
+
+  .TagSelect-options--show & {
+    border-radius: $item-border-radius $item-border-radius 0 0;
+  }
+}
+
+.TagSelect-input {
+  padding: $gutter;
+  flex: 1;
+  background: none;
+  padding: $gutter;
+  width: 100%;
+  height: $default-unit-height;
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+.TagSelect-options {
+  @include pop-up-border($color-midd-grey);
+  display: none;
+  position: absolute;
+  width: 100%;
+  border-top: 0;
+  border-radius: 0 0 $item-border-radius $item-border-radius;
+  z-index: $z-index-2;
+
+  .TagSelect-options--show & {
+    display: block;
+  }
+}
+
+.Tag {
+  margin: $gutter 0 0 $gutter;
+}

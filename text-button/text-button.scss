@@ -1,0 +1,128 @@
+$text-button-max-width: 180px;
+
+.TextButton {
+  padding: 0;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  font-size: inherit;
+  text-transform: capitalize;
+  box-shadow: none;
+  vertical-align: middle;
+  appearance: none;
+  white-space: nowrap;
+  max-width: $text-button-max-width;
+
+  &:hover {
+    @include transition(.3s);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .12);
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  &:active {
+    @include transition(.1s);
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.fill {
+    padding: 0 $default-unit-height - $gutter;
+    border-radius: $item-border-radius;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    line-height: $default-unit-height - $gutter;
+  }
+
+  &.text {
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &.upperline {
+    margin-top: -20px;
+    padding: 0 15px;
+    font-weight: $font-weight-normal;
+  }
+
+  &.green {
+    @include transition(.3s);
+    background-color: $color-light-green;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-light-green, 8);
+    }
+
+    &:active {
+      background-color: darken($color-light-green, 20);
+    }
+  }
+
+  &.white {
+    @include transition(.3s);
+    border: 1px solid $color-midd-grey;
+    color: $color-dark;
+    background-color: $color-white;
+
+    &:hover {
+      box-shadow: 0 2px 0 rgba(0, 0, 0, .05);
+    }
+
+    &:active {
+      background-color: darken($color-white, 5);
+    }
+  }
+
+  &.dark {
+    @include transition(.3s);
+    background-color: $color-dark;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-dark, 50);
+    }
+  }
+
+  &.delete {
+    @include transition(.3s);
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    line-height: $default-unit-height - $gutter;
+
+    &:hover {
+      color: $color-light-red;
+    }
+
+    &:active {
+      color: darken($color-light-red, 25);
+    }
+  }
+
+  &.action {
+    @include transition(.3s);
+    color: $color-orange;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+
+    &:hover {
+      color: darken($color-orange, 5);
+    }
+  }
+
+  &.action-alt {
+    @include transition(.3s);
+    color: $color-grey;
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+
+    &:hover {
+      color: $color-orange;
+    }
+  }
+}

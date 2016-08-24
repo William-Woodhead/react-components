@@ -1,0 +1,70 @@
+$carousel-arrow-opacity: .5;
+
+.Carousel {
+  overflow: hidden;
+}
+
+.Carousel-Item {
+  display: none;
+
+  &.Carousel-Item--show {
+    display: block;
+  }
+}
+
+.Carousel-Arrow {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  font-size: $font-size-quote;
+  cursor: pointer;
+  user-select: none;
+  opacity: .5;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.Carousel-Arrow--left {
+    left: 0;
+    margin-left: $gutter;
+  }
+
+  &.Carousel-Arrow--right {
+    right: 0;
+    width: 90%;
+    text-align: right;
+    margin-right: $gutter * 2;
+  }
+
+  .Carousel-ArrowCharacter {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: $color-white;
+    font-size: 12px;
+  }
+}
+
+.Carousel-Dot {
+  width: $gutter;
+  height: $gutter;
+  margin: $gutter / 2;
+  border-radius: 50%;
+  background: $color-white;
+  opacity: $carousel-arrow-opacity;
+
+  &.Carousel-Dot--highlight {
+    opacity: 1;
+  }
+}
+
+.Carousel-Dots {
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  justify-content: space-between;
+  transform: translateX(-50%);
+}

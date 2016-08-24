@@ -1,0 +1,52 @@
+.DotInput {
+  @include transition(.2s);
+  @include border;
+  padding: 0;
+  display: flex;
+  position: relative;
+  flex: 1 0 auto;
+  width: 100%;
+  height: $default-unit-height;
+
+  &:hover {
+    border-color: $color-grey;
+  }
+
+  &.DotInput-focus {
+    border-color: $color-orange;
+    box-shadow: $block-box-shadow-focus;
+  }
+
+  &.DotInput-block {
+    display: block;
+  }
+
+  &.ok {
+    border-color: $color-light-blue;
+  }
+
+  &.warning {
+    border-color: $color-orange;
+  }
+
+  &.fail {
+    border-color: $color-light-red;
+  }
+
+  .Dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.DotInput-input {
+  width: calc(100% - #{$default-unit-height});
+  height: 100%;
+  margin: 0;
+  padding: $gutter;
+  background: none;
+  border: 0;
+  outline: none;
+  line-height: $default-unit-height - (2 * $gutter + 2);
+}

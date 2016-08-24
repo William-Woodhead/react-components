@@ -1,0 +1,20 @@
+$tag-padding-y: 6px !default;
+$tag-padding-x: 8px !default;
+$tag-border: none !default;
+
+.Tag {
+  display: inline-block;
+  padding: $tag-padding-y $tag-padding-x;
+  border: $tag-border;
+  border-radius: 2px;
+  font-weight: $font-weight-semibold;
+  background: $color-alt-grey;
+  font-size: $font-size-small;
+
+  .Tag-cross {
+    margin-left: $tag-padding-x;
+    padding: 0 0 0 $tag-padding-x;
+    border-left: $tag-border;
+    cursor: pointer;
+  }
+}

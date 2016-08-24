@@ -1,0 +1,33 @@
+$tag-string-input-min-width: 300px;
+
+.TagString {
+  position: relative;
+  width: 100%;
+}
+
+.TagString-tags {
+  display: inline;
+  min-height: auto;
+}
+
+.TagString-inputWrapper {
+  @include border;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: $default-unit-height;
+}
+
+.TagString-input {
+  display: inline-block;
+  flex: 1;
+  min-width: 300px;
+  height: $default-unit-height;
+  margin: 0;
+  padding: $gutter;
+  border: 0;
+  outline: none;
+  background: none;
+  vertical-align: top;
+}

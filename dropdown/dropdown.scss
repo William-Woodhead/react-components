@@ -1,0 +1,81 @@
+$dropdown-min-width: 120px !default;
+$dropdown-toggle-size: 12px !default;
+$dropdown-border-radius: 4px;
+$dropdown-transition-length: .15s;
+
+.Dropdown {
+  display: inline-block;
+  position: relative;
+  min-width: $dropdown-min-width;
+}
+
+.Dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $gutter;
+}
+
+.Dropdown-input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.Dropdown-input.Dropdown-input--empty::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.Dropdown-input::-webkit-input-placeholder {
+  color: $color-black;
+  font-weight: bold;
+}
+
+.Dropdown-toggle {
+  display: inline-block;
+  width: $dropdown-toggle-size;
+  height: $dropdown-toggle-size;
+  margin-left: $gutter * 2;
+  transition: opacity $dropdown-transition-length;
+  background-image: url('../../../../assets/svg/arrow-down-orange.svg');
+  background-repeat: no-repeat;
+  background-position: right 0 top 0;
+  background-size: $dropdown-toggle-size $dropdown-toggle-size;
+  cursor: pointer;
+  opacity: 1;
+
+  .Dropdown-options--show & {
+    transition: opacity $dropdown-transition-length;
+    opacity: 0;
+  }
+}
+
+.Dropdown-options {
+  @include pop-up-border($color-midd-grey);
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 100%;
+  overflow: hidden;
+  border-radius: $dropdown-border-radius;
+  font-size: $font-size-normal;
+  z-index: $dropdown-options-z-index;
+
+  .SelectOption {
+    padding:  0 $gutter;
+    border-top: 1px solid $color-light-grey;
+    font-size: $font-size-normal;
+    text-align: left;
+    &:hover {
+      background: $color-light-grey;
+    }
+  }
+}
+
+.Dropdown-options--show {
+  .Dropdown-options {
+    display: block;
+  }
+}

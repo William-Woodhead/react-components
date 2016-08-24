@@ -1,0 +1,42 @@
+$time-select-width: 100px !default;
+$time-select-options-max-height: 300px !default;
+
+.TimeSelect {
+  display: inline-block;
+  flex: 0;
+  width: $time-select-width;
+
+  &:hover {
+    background: $color-light-grey;
+  }
+
+  .TagSelect--tagsSelected {
+    .TagSelect-input {
+      display: none;
+    }
+  }
+
+  .TagSelect-inputWrapper {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .TagSelect-input {
+    width: $time-select-width - 20;
+    background: none;
+  }
+
+  .TagSelect-options {
+    max-height: $time-select-options-max-height;
+    overflow: scroll;
+  }
+
+  .SelectOption {
+    padding: 0 $gutter;
+    font-size: $font-size-normal;
+  }
+
+  .Tag {
+    margin: $gutter;
+  }
+}

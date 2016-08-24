@@ -1,0 +1,21 @@
+.Titler {
+  flex: 1 0 auto;
+  max-width: 100%;
+  margin-top: $gutter;
+  margin-right: $gutter;
+  text-align: left;
+
+  & + & {
+    margin-left: $gutter;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.Titler-title {
+  margin-bottom: $gutter / 2;
+  color: $color-dark-grey;
+  font-size: $font-size-small;
+}

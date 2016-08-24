@@ -1,0 +1,27 @@
+.SelectOption {
+  width: 100%;
+  height: $default-unit-height;
+  padding-left: 2%;
+  background: $color-white;
+  font-size: $font-size-normal;
+  line-height: $default-unit-height;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-light-grey;
+  }
+
+  & + & {
+    border-top: $standard-border;
+  }
+
+  .SelectOption-label {
+    display: inline-block;
+    width: 100%;
+    line-height: $default-unit-height;
+  }
+
+  &.SelectOption--active {
+    background: $color-light-grey;
+  }
+}

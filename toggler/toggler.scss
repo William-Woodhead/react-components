@@ -1,0 +1,70 @@
+$toggler-min-width: 80px !default;
+$toggler-option-icon: 30px !default;
+
+.Toggler {
+  display: inline-flex;
+}
+
+.Toggler-option {
+  @include border;
+  display: inline-block;
+  position: relative;
+  min-width: $toggler-min-width;
+  height: $default-unit-height;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-right: 0;
+  border-radius: $item-border-radius 0 0 $item-border-radius;
+  background: $color-white;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: $color-light-grey;
+  }
+
+  & + & {
+    border-radius: 0;
+  }
+
+  &:last-of-type {
+    border-right: $standard-border;
+    border-radius: 0 $item-border-radius $item-border-radius 0;
+  }
+
+  &.Toggler-option--active {
+    background: $color-light-green;
+    border-color: $color-light-green;
+    color: $color-white;
+  }
+}
+
+.Toggler-option-label {
+  display: inline-table;
+  height: 100%;
+
+  .Toggler-option--hasSubtitle & {
+    height: 50%;
+  }
+}
+
+.Toggler-option-subtitle {
+  display: inline-table;
+  height: 50%;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+.Toggler-option-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.Toggler-option-icon {
+  display: flex;
+  width: 30%;
+  height: $toggler-option-icon;
+  max-height: $toggler-option-icon;
+  margin: 0 auto $gutter;
+}
